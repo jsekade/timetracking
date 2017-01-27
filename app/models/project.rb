@@ -15,6 +15,10 @@ class Project < ApplicationRecord
       projects.destroy_all
     end
 
+    def get_first_created(limit)
+      order(created_at: :asc).limit(limit)
+    end
+
     private
 
     def last_week
